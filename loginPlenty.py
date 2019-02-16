@@ -22,7 +22,7 @@ def loginTries(sellerUrl):
     username = ""
     password = ""
     count = 0
-    while count < 3: # max. 3 tries test
+    while count < 3: # max. 3 tries
         count += 1
         re = loginPost(sellerUrl, username, password)
         if re.status_code == 200:
@@ -34,7 +34,6 @@ def loginTries(sellerUrl):
             head = {'Authorization': token_type + " " + access_token}
             
             return token_type, access_token, refresh_token, head
-            break
         else:
             print ("Your " + str(count) + ". login failed, please try again! (max. 3 tries)")
     else:
