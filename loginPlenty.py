@@ -22,7 +22,7 @@ def loginTries(sellerUrl):
     username = ""
     password = ""
     count = 0
-    while count < 3:
+    while count < 3: # max. 3 tries
         count += 1
         re = loginPost(sellerUrl, username, password)
         if re.status_code == 200:
