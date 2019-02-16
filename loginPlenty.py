@@ -32,7 +32,6 @@ def loginTries(sellerUrl):
             access_token = login_re_js['access_token']
             refresh_token = login_re_js['refresh_token']
             head = {'Authorization': token_type + " " + access_token}
-            
             return token_type, access_token, refresh_token, head
         else:
             print ("Your " + str(count) + ". login failed, please try again! (max. 3 tries)")
